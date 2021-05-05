@@ -31,8 +31,7 @@
 import os
 import tempfile
 
-from mslib.msui.mss_qt import QtCore
-QStandardPaths = QtCore.QStandardPaths
+from PyQt5.QtCore import QStandardPaths
 
 
 MSS_CONFIG_PATH = os.path.join(QStandardPaths.writableLocation(

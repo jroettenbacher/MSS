@@ -43,7 +43,7 @@ try:
 except ImportError:
     import pyproj
 
-from mslib.msui import constants, MissionSupportSystemDefaultConfig
+from mslib.msui import constants
 from mslib.thermolib import pressure2flightlevel
 from PyQt5 import QtCore, QtWidgets
 
@@ -153,7 +153,7 @@ def config_loader(config_file=None, dataset=None):
     if config_file is None:
         logging.info(
             'Default MSS configuration in place, no user settings, see http://mss.rtfd.io/en/stable/usage.html')
-    default_config = dict(MissionSupportSystemDefaultConfig.__dict__)
+    default_config = dict(constants.MissionSupportSystemDefaultConfig.__dict__)
     if dataset is not None and dataset not in default_config:
         raise KeyError(f"requested dataset '{dataset}' not in defaults or config_file")
     if config_file is None:
